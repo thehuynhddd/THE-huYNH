@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gửi Bạn Món Quà 20/10 ❤️</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background: linear-gradient(135deg, #ff758c, #ff7eb3);
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			overflow: hidden;
+		}
+		.card {
+			background: rgba(255, 255, 255, 0.95);
+			padding: 35px 25px;
+			border-radius: 20px;
+			box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+			text-align: center;
+			max-width: 380px;
+			margin: 20px;
+			animation: popup 0.8s ease-out;
+		}
+		.heart {
+			font-size: 60px;
+			color: #e84393;
+			animation: pulse 1.2s infinite alternate;
+		}
+		h1 {
+			color: #d63031;
+			font-size: 24px;
+			margin-top: 10px;
+		}
+		.name {
+			color: #e84393;
+			font-weight: bold;
+			font-size: 26px;
+		}
+		p {
+			color: #2d3436;
+			font-size: 16px;
+			line-height: 1.6;
+		}
+		@keyframes pulse {
+			from { transform: scale(1); }
+			to { transform: scale(1.25); }
+		}
+		@keyframes popup {
+			from { opacity: 0; transform: scale(0.8); }
+			to { opacity: 1; transform: scale(1); }
+		}
+	</style>
+</head>
+<body>
+
+	<div class="card">
+		<div class="heart">💐❤️</div>
+		<h1 id="greeting">Chúc Mừng 20/10!</h1>
+		<p>Chúc <span class="name" id="userName">bạn</span> có một ngày Phụ nữ Việt Nam thật nhiều niềm vui, luôn xinh đẹp, rạng rỡ và tràn ngập hạnh phúc!</p>
+	</div>
+
+	<script>
+		// Lấy tên từ tham số "ten" trên thanh URL
+		const urlParams = new URLSearchParams(window.location.search);
+		const name = urlParams.get('ten');
+
+		if (name) {
+			document.getElementById('userName').textContent = name;
+		}
+	</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
